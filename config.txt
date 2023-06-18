@@ -1,0 +1,123 @@
+4 4 40
+10 2 primero
+Arregui	Duran Paloma Maribel 24.466.600-5
+Echeverría Vargas Cristian Omar 24.720.487-6
+Figueroa Céspedes Julio Camilo 24.675.315-2
+Maturana Salinas Hanul Hanul 24.563.830-9
+Muñoz Pacheco Maria Jessica 24.839.863-9
+Olivera Ferrero Marcelino Luciano 24.956.461-5
+Sandoval Cortes Jose Manuel 24.553.928-3
+Sarmiento Nogueira Angelina Carmen 24.507.274-4
+Villalobos Alarcón Iris Rebeca 24.008.447-k
+Williams Tamayo	Christopher Juan 24.367.970-8
+LEN1 Lenguaje 2023
+MAT1 Matematica 2023
+10 2 segundo 
+Álvarez Ugarte Ana Fernanda 24.005.487-3
+Chávez Catalán Esteban Jesús 24.704.522-6
+Espejo Navarrete Julio César 24.934.344-0
+González Suarez	María Consuelo 24.738.850-k
+Ibáñez Díaz Sandra Rocío 24.259.212-9
+López Rodriguez Josefa Sofía 24.825.254-5
+Maturana Robledo Violeta Cristina 24.318.945-4
+Naranjo Mendoza Alonso Rodrigo 24.340.718-7
+Vera Gutierrez Manuel Gabriel 24.703.045-8
+Vergara Quintero Gerardo Juan 24.017.682-2
+LEN2 Lenguaje 2023
+MAT2 Matematica 2023
+10 2 tercero
+Beltrán	Acevedo	Matías	Esteban	23.922.395-1
+Castillo Salamanca Osvaldo Maximiliano 23.842.261-2
+Cortes Nuñez Marta Emilia 23.499.662-3
+Garay Cañete Helena Eva 23.685.298-2
+Guerrero Palomino Luis Angel 23.749.337-3
+Guzmán Santos Mónica Valeria 23.428.416-8
+Hernández Tapia Tamara Valentina 23.057.224-7
+Méndez Toledo Victor Antonio 23.150.851-9
+Peralta Arias Fabián Francisco 23.644.982-5
+Valencia González Nadia Mercedes 23.291.480-k
+LEN3 Lenguaje 2023
+MAT3 Matematica 2023
+10 2 cuarto
+Duran Saavedra Estefanía Daniela 23.345.663-3
+Echevarría Ortega Francisca Carla 23.259.156-6
+Ferrer	Martínez Emilio Rubén 23.191.170-7
+Hernandez Nevado Andrea	Ángela 23.787.999-4
+Iglesias Salinas Liliana Paulina 23.995.879-8
+Maldonado Garmendia Cristian Renato 23.724.512-6
+Mena Poblete José Pedro	23.176.962-2
+Pedrero	Madrid Antonia Susana 23.666.333-2
+Santamaría Contreras Martin Jorge 23.982.613-1
+Zamorano Molina Samuel Gonzalo 23.522.510-0
+LEN4 Lenguaje 2023
+MAT4 Matematica 2023
+2 Otsuka Otsuka Hatsue Ana 19.593.063-5 hatsue.otsuka@colegio.cl
+LEN1
+LEN4
+2 Borquez Carmona Ines Edilia 8.132.883-1 ines.borquez@colegio.cl
+LEN2
+LEN3
+3 Ortiz Videla Sofía Mila 20.501.974-k sofiamartineza45@gmail.com
+MAT1
+MAT3
+MAT4
+1 Robles Galaz Adrian Victor 10.915.388-5 adrian.robles@colegio.cl
+MAT2
+Antonia	Amanda Duran Franco 11.345.663-3 sofiamartinezalva45@gmail.com 24.466.600-5
+Belen Calista Vargas Mayol 15.259.156-6 s_martinez.a@hotmail.com 24.720.487-6
+Nazario Alberto Figueroa Valero 6.191.170-7 sofiamartinezalva45@gmail.com 24.675.315-2
+Renato	Matias Maturana	Salinas	16.787.999-4 renato.maturana@usach.cl 24.563.830-9
+Roxana Débora Pacheco Diaz 8.995.879-8 renato_maturana2012@hotmail.cl 24.839.863-9
+Blanca Mayte Ferrero Hoz 14.724.512-6 renathetimetraveler@outlook.com 24.956.461-5
+Juan José Sandoval Miró 9.176.962-2 sofiamartinezalva45@gmail.com 24.553.928-3
+Bruno Eric Sarmiento Pujol 15.666.333-2 sofiamartinezalva45@gmail.com 24.507.274-4
+Ruperto Nicolas	Villalobos Quevedo 10.982.613-1 sofiamartinezalva45@gmail.com 24.008.447-k
+Flavia Sara Tamayo Agullo 12.522.510-0 sofiamartinezalva45@gmail.com 24.367.970-8
+Miriam Paulina Ugarte Morán 10.005.487-3 miriam.ugarte@mail.com 24.005.487-3
+Susana Cecilia Catalán	Olivera	11.704.522-6 susana.catalán@mail.com 24.704.522-6
+Julio César Espejo Casanova 10.291.480-k julio.espejo@mail.com 24.934.344-0
+Adrián Adán González Silva 10.738.850-k adrián.gonzález@mail.com 24.738.850-k
+Cloe Hortensia Díaz Villaverde 11.259.212-9 cloe.díaz@mail.com 24.259.212-9
+Matilde	Karina Rodriguez Pacheco 16.825.254-5 matilde.rodriguez@mail.com 24.825.254-5
+Emiliana Macaria Robledo Millán	13.318.945-4 emiliana.robledo@mail.com 24.318.945-4
+Georgina Domitila Mendoza Crespo 8.340.718-7 georgina.mendoza@mail.com 24.340.718-7
+Patricia Liliana Gutierrez Parra 16.703.045-8 patricia.gutierrez@mail.com 24.703.045-8
+Jaime Ambrosio Vergara Escalona 7.017.682-2 jaime.vergara@mail.com 24.017.682-2
+Marta Maricela Acevedo Simó 5.466.600-5 marta.acevedo@mail.com 23.922.395-1
+Amaya Adela Salamanca Calderon 15.720.487-6 amaya.salamanca@mail.com 23.842.261-2
+Abraham	Eusebio Cortes Pedrosa	14.675.315-2 abraham.cortes@mail.com 23.499.662-3
+Consuelo Manuela Cañete Ureña	8.563.830-9 consuelo.cañete@mail.com 23.685.298-2
+María Del Carmen Palomino Tapia	7.839.863-9 maría.palomino@mail.com 23.749.337-3
+Rufina Renata Santos Llorens 5.956.461-5 rufina.santos@mail.com 23.428.416-8
+Marisela Angélica Tapia	Valera 8.553.928-3 marisela.tapia@mail.com 23.057.224-7
+Gracia Concepción Toledo Robledo 16.507.274-4 gracia.toledo@mail.com 23.150.851-9
+Isaías Rubén Peralta Salgado 11.008.447-k isaías.peralta@mail.com 23.644.982-5
+Federico Lisandro Valencia Cabezas 13.367.970-8 federico.valencia@mail.com 23.291.480-k
+Cristian Nicanor Duran Calderón 15.922.395-1 cristian.duran@mail.com 23.345.663-3
+Ignacio	Marcos Echevarría Castilla 12.842.261-2 ignacio.echevarría@mail.com 23.259.156-6
+Patricia Ruperta Martínez Villegas 9.499.662-3 patricia.martínez@mail.com 23.191.170-7
+Elizabeth Teresita Nevado Vilalta 8.685.298-2 elizabeth.nevado@mail.com	23.787.999-4
+Carlos Bruno Iglesias Vives 11.749.337-3 carlos.iglesias@mail.com 23.995.879-8
+Paulina Paula Garmendia Salas 14.428.416-8 paulina.garmendia@mail.com 23.724.512-6
+Gerardo Néstor Mena Prado 16.057.224-7 gerardo.mena@mail.com 23.176.962-2
+Jesús Darío Pedrero Ribes 15.150.851-9 jesús.pedrero@mail.com 23.666.333-2
+Mariana Pepita Contreras Leal 12.644.982-5 mariana.contreras@mail.com 23.982.613-1
+Desiderio Victorino Zamorano Cabezas 5.934.344-0 desiderio.zamorano@mail.com 23.522.510-0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
