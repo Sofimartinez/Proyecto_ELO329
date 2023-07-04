@@ -13,19 +13,41 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-
 import java.util.ArrayList;
 
+/**
+ * @throws Clase que modela la vista de inicio de sesión para los profesores.
+ * @author Sofía Martínez
+ */
+
 public class LoginView extends Group {
+    /**
+     *   Lista de Objetos Profesor que corresponde a los profesores que conforman el colegio.
+     */
     private ArrayList<Profesor> profesores;
+    /**
+     *   Lista de Objetos Curso corresponde a los cursos que se dictan en el colegio.
+     */
     private ArrayList<Curso> cursos;
+    /**
+     *   Lista de Objetos Apoderados del colegio.
+     */
     private ArrayList<Apoderado> apoderados;
+    /**
+     * Constructor de LoginView, inicializa una nueva vista para el inicio de sesión.
+     * @param profesores Lista de Objetos Profesor que corresponde a los profesores que conforman el colegio.
+     * @param cursos Lista de Objetos Curso corresponde a los cursos que se dictan en el colegio.
+     * @param apoderados Lista de Objetos Apoderados del colegio.
+     */
     public LoginView(ArrayList<Profesor> profesores, ArrayList<Curso> cursos, ArrayList<Apoderado> apoderados){
         this.profesores = profesores;
         this.cursos = cursos;
         this.apoderados = apoderados;
         makeLoginView();
     }
+    /**
+     * Genera los elementos gráficos de la vista de formulario para el incio de sesión de un profesor.
+     */
     private void makeLoginView(){
         GridPane grid = new GridPane();
         grid.setAlignment(Pos.CENTER);
@@ -39,7 +61,7 @@ public class LoginView extends Group {
 
         // Add Name Label
         VBox vBox = new VBox();
-        Label rutLabel = new Label("Rut profesor");
+        Label rutLabel = new Label("RUT profesor");
         vBox.getChildren().addAll(rutLabel);
 
         // Add Name Text Field
@@ -70,7 +92,7 @@ public class LoginView extends Group {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setHeaderText(null);
                 alert.setTitle("Error");
-                alert.setContentText("Rut no encontrado");
+                alert.setContentText("RUT no encontrado");
                 alert.showAndWait();
             }
         });

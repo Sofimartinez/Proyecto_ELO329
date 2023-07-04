@@ -2,8 +2,20 @@ import javafx.scene.layout.Pane;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
+/**
+ * @throws Clase que configura los apoderados, asignatura, alumnos, profesores, cursos y la vista de login.
+ * @author Sofía Martínez
+ */
 public class Colegio extends Pane {
+    /**
+     * Constructor de Colegio, inicializa un nuevo Colegio.
+     * @param in Objeto Scanner que tiene la información del archivo de configuración.
+     * @param auxAsignaturas Lista de Objetos Asignatura.
+     * @param auxAlumnos Lista de Objetos Alumno.
+     * @param auxProfesores Lista de Objetos Profesor.
+     * @param auxApoderados Lista de Objetos Apoderado.
+     * @param auxCursos Lista de Objetos Curso.
+     */
     public Colegio(Scanner in, ArrayList<Asignatura> auxAsignaturas, ArrayList<Alumno> auxAlumnos, ArrayList<Profesor> auxProfesores, ArrayList<Apoderado> auxApoderados, ArrayList<Curso> auxCursos){
         int numCursos = in.nextInt();
         int numProfesores = in.nextInt();

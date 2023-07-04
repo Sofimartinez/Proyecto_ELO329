@@ -14,13 +14,39 @@ import javafx.stage.Stage;
 import javax.sound.midi.SysexMessage;
 import java.time.LocalDate;
 import java.util.ArrayList;
-
+/**
+ * @throws Clase que modela la vista con el formulario para poder añadir notas a las alumnos.
+ * @author Sofía Martínez
+ */
 public class NotaAddView extends Group {
+    /**
+     *   Lista de Objetos Alumno corresponde a los alumnos a los que se les añadirá la nota.
+     */
     private ArrayList<Alumno> alumnos;
+    /**
+     *   Objeto Evaluacion corresponde a la evaluación a la que se añadiran notas.
+     */
     private Evaluacion evaluacion;
+    /**
+     *   Objeto Asignatura corresponde a la información de la asignatura que mostrará la vista.
+     */
     private Asignatura asignatura;
+    /**
+     *   Objeto Profesor corresponde al profesor que dicta la asignatura.
+     */
     private Profesor profesor;
+    /**
+     *  Objeto TableView de Evaluacion que permite visualizar la tabla de alumnos y añadir la nota.
+     */
     private TableView<Evaluacion> tableEvalView;
+    /**
+     * Constructor de NotaAddView, inicializa una nueva vista para añadir notas.
+     * @param a Lista de Objetos Alumnos que corresponde a los alumnos que rendienron la evalaución.
+     * @param e Objeto Evaluacion corresponde a la asignatura a la cual se añadiran notas.
+     * @param p Lista de Objetos Profesor que es el profesor que dicta la asignatura.
+     * @param asig Objeto Asignatura corresponde a la información de la asignatura que mostrará la vista.
+     * @param table Objeto TableView de Evaluacion que permite visualizar la tabla de alumnos y añadir la nota.
+     */
     public NotaAddView(ArrayList<Alumno> a, Evaluacion e, Profesor p, Asignatura asig, TableView<Evaluacion> table){
         alumnos = a;
         evaluacion = e;
@@ -29,7 +55,9 @@ public class NotaAddView extends Group {
         tableEvalView = table;
         makeNotaAddView();
     }
-
+    /**
+     * Genera los elementos gráficos de la vista de formulario para ingresar notas a una evaluación.
+     */
     private void makeNotaAddView(){
         VBox vBox = new VBox();
         vBox.setSpacing(5);
@@ -83,37 +111,55 @@ public class NotaAddView extends Group {
         hBox.getChildren().addAll(submitButton,cancelButton);
 
         submitButton.setOnAction(e -> {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText(null);
-            alert.setTitle("Información");
-            alert.setContentText("Se han añadido correctamente las notas. Se enviará un correo a los apoderados para informar de los resultados de la evaluación");
-            alert.showAndWait();
 
+            //Verificación formato notas
+            ArrayList<String> listError= new ArrayList<String>();
+            boolean error = false;
+            for(int i =0; i<alumnos.size();i++) {
+                try {
+                    if(!alumnos.get(i).getNotaField().getText().equals("")){
+                        evaluacion.addNota(Float.valueOf(alumnos.get(i).getNotaField().getText()), alumnos.get(i).getNumLista() - 1);
+                    }else{
+                        evaluacion.addNota(Float.valueOf(0),alumnos.get(i).getNumLista()-1);
+                    }
+                }catch (NumberFormatException nfe){
+                    error = true;
+                    alumnos.get(i).getNotaField().clear();
+                }
+            }
+            tableEvalView.refresh();
+
+            if(error) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setTitle("Error");
+                alert.setContentText("Algunos datos son incorrectos. Se enviará un correo a los apoderados donde el dato ingresado fue correcto");
+                alert.showAndWait();
+            }else{
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText(null);
+                alert.setTitle("Información");
+                alert.setContentText("Se enviará un correo a los apoderados para informar de los resultados de la evaluación");
+                alert.showAndWait();
+            }
             //Envio de correos
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
+                    ArrayList<String> listError= new ArrayList<String>();
                     for(int i =0; i<alumnos.size();i++) {
                         if(!alumnos.get(i).getNotaField().getText().equals("")){
-                            try{
-                                evaluacion.addNota(Float.valueOf(alumnos.get(i).getNotaField().getText()), alumnos.get(i).getNumLista()-1);
-                                String newline = System.getProperty("line.separator");
-                                String emailFrom = profesor.getCorreo();
-                                String subject = "Nueva nota ingresa  asignatura " + asignatura.getSigla() + " " + asignatura.getNombre();
-                                String content = "Estimado señor/a "+ alumnos.get(i).getApoderado().getApellidoPaterno() +", " + newline + newline +
-                                        "Su pupilo/a " + alumnos.get(i).getNombre1() + " " + alumnos.get(i).getApellidoPaterno() +
-                                        " a sido calificado en la evaluación " + evaluacion.getTitulo() + " de la asignatura " + asignatura.getNombre() + " con un " + alumnos.get(i).getNotaField().getText()+"."+
-                                        newline + newline + "Saludos," + newline + profesor.getNombre1() + " " + profesor.getApellidoPaterno() + " " + profesor.getApellidoMaterno() + ".";
-                                EnvioCorreoNota correo = new EnvioCorreoNota();
-                                correo.createEmail(emailFrom, alumnos.get(i).getApoderado().getCorreo(), content, subject);
-                                correo.sendEmail();
-                            }catch (NumberFormatException nfe){
-                                System.out.println("Dato ingresado en formato no válido");
-                            }
-                        }else{
-                            evaluacion.addNota(Float.valueOf(0),alumnos.get(i).getNumLista()-1);
+                            String newline = System.getProperty("line.separator");
+                            String emailFrom = profesor.getCorreo();
+                            String subject = "Nueva nota ingresa  asignatura " + asignatura.getSigla() + " " + asignatura.getNombre();
+                            String content = "Estimado señor/a "+ alumnos.get(i).getApoderado().getApellidoPaterno() +", " + newline + newline +
+                                    "Su pupilo/a " + alumnos.get(i).getNombre1() + " " + alumnos.get(i).getApellidoPaterno() +
+                                    " a sido calificado en la evaluación " + evaluacion.getTitulo() + " de la asignatura " + asignatura.getNombre() + " con un " + alumnos.get(i).getNotaField().getText()+"."+
+                                    newline + newline + "Saludos," + newline + profesor.getNombre1() + " " + profesor.getApellidoPaterno() + " " + profesor.getApellidoMaterno() + ".";
+                            EnvioCorreoNota correo = new EnvioCorreoNota();
+                            correo.createEmail(emailFrom, alumnos.get(i).getApoderado().getCorreo(), content, subject);
+                            correo.sendEmail();
                         }
                     }
-                    tableEvalView.refresh();
                 }
             });
         });

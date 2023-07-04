@@ -10,10 +10,10 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
+/**
+ * @author Sofía Martínez
+ */
 public class Proyecto extends Application{
-    private Profesor profesor;
-
     @Override
     public void start(Stage primaryStage) {
         List<String> args = getParameters().getRaw();

@@ -5,21 +5,52 @@ import javax.mail.*;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-
+/**
+ * @throws Clase que permite el envío de correos electrónicos para múltiples remitentes.
+ * @author Sofía Martínez
+ */
 public class EnvioCorreos extends javax.swing.JFrame {
-
+    /**
+     *   Correo electrónico desde el cual se enviará el correo como String
+     */
     private static String emailFrom = "sofiamartineza45@gmail.com";
+    /**
+     *   Contraseña para aplicaciones configurada previamente desde la cuenta que permite realizar el envío de los correos
+     */
     private static String passwordFrom = "kpsblyvfayongeyy";
+    /**
+     *    Asunto del correo
+     */
     private String subject;
+    /**
+     *    Contenido del correo
+     */
     private String content;
+    /**
+     *    Objeto Properties para configurar las características del correo que se enviará
+     */
     private Properties mProperties;
+    /**
+     *    Objeto Session representa una sesión de correo
+     */
     private Session mSession;
+    /**
+     *    Objeto MimeMessage representa un mensaje de correo electrónico de estilo MIME.
+     */
     private MimeMessage mCorreo;
-
+    /**
+     * Constructor de EnvioCorreo, inicializa el envío de un correo para múltiples remitentes.
+     */
     public EnvioCorreos() {
         mProperties = new Properties();
     }
-
+    /**
+     * Crea y configura las propiedades del correo electrónico
+     * @param emailFrom correo del remitente.
+     * @param recipents correo de los destinatarios como un String separado por comas.
+     * @param content contenido del correo.
+     * @param subject asunto del correo.
+     */
     public void createEmail(String emailFrom,String recipents, String content, String subject) {
         this.emailFrom = emailFrom;
         this.subject = subject;
@@ -60,7 +91,9 @@ public class EnvioCorreos extends javax.swing.JFrame {
             Logger.getLogger(EnvioCorreos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    /**
+     * Envía el correo electrónico generado con el método createEmail
+     */
     public void sendEmail() {
         try {
             Transport mTransport = mSession.getTransport("smtp");

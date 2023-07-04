@@ -11,17 +11,38 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
-
+/**
+ * @throws Clase que modela la vista con la información de las asignturas del profesor, el cambio de vista a una asignatura particular.
+ * @author Sofía Martínez
+ */
 public class ProfesorView extends Group{
+    /**
+     *   Objeto Profesor.
+     */
     private Profesor profesor;
+    /**
+     *   Lista de cursos que se dictan el colegio
+     */
     private ArrayList<Curso> cursos;
+    /**
+     *   Lista de apoderados del colegio
+     */
     private ArrayList<Apoderado> apoderados;
+    /**
+     * Constructor de ProfesorView, inicializa un nueva vista de profesor.
+     * @param profesor Objeto Profesor profesor que inicia sesión.
+     * @param curso Lista de Objeto Curso que representa la información relacionada a los alumnos.
+     * @param apoderados Lista de Objeto Apoderado son todos los apoderados del colegio.
+     */
     public ProfesorView(Profesor profesor, ArrayList<Curso> curso, ArrayList<Apoderado> apoderados){
         this.profesor = profesor;
         this.cursos = curso;
         this.apoderados = apoderados;
         makeProfesorView();
     }
+    /**
+     * Genera los elementos gráficos de la vista de todas las asignatura del profesor y controla las acciones de seleccionar una asignaturada.
+     */
     private void makeProfesorView(){
         BorderPane borderPane = new BorderPane();
         VBox vBox = new VBox();

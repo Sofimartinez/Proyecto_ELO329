@@ -5,22 +5,57 @@ import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+/**
+ * @throws Clase que permite el envío de correos electrónicos para un remitente en particular.
+ * @author Sofía Martínez
+ */
 public class EnvioCorreoNota extends javax.swing.JFrame {
-
+    //Campos privados
+    /**
+     *   Correo electrónico desde el cual se enviará el correo como String
+     */
     private static String emailFrom = "sofiamartineza45@gmail.com"; //Valor por defecto para poder enviar correos desde dirección real
-    private static String passwordFrom = "kpsblyvfayongeyy"; //contraseña neceaaria para poder acceder a enviar correos
+    /**
+     *   Contraseña para aplicaciones configurada previamente desde la cuenta que permite realizar el envío de los correos
+     */
+    private static String passwordFrom = "kpsblyvfayongeyy"; //contraseña necesaria para poder acceder a enviar correos
+    /**
+     *    Correo electrónico al cual se le enviará el correo como String
+     */
     private static String emailTo;
+    /**
+     *    Asunto del correo
+     */
     private String subject;
+    /**
+     *    Contenido del correo
+     */
     private String content;
+    /**
+     *    Objeto Properties para configurar las características del correo que se enviará
+     */
     private Properties mProperties;
+    /**
+     *    Objeto Session representa una sesión de correo
+     */
     private Session mSession;
+    /**
+     *    Objeto MimeMessage representa un mensaje de correo electrónico de estilo MIME.
+     */
     private MimeMessage mCorreo;
-
+    /**
+     * Constructor de EnvioCorreoNota, inicializa el envío de correos.
+     */
     public EnvioCorreoNota() {
         mProperties = new Properties();
     }
-
+    /**
+     * Crea y configura las propiedades del correo electrónico
+     * @param emailFrom correo del remitente.
+     * @param emailTo correo del destinatario.
+     * @param content contenido del correo.
+     * @param subject asunto del correo.
+     */
     public void createEmail(String emailFrom,String emailTo, String content, String subject) {
         this.emailFrom = emailFrom;
         this.emailTo = emailTo;
@@ -51,7 +86,9 @@ public class EnvioCorreoNota extends javax.swing.JFrame {
             Logger.getLogger(EnvioCorreoNota.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    /**
+     * Envia el correo electrónico generado con el método createEmail
+     */
     public void sendEmail() {
         try {
             Transport mTransport = mSession.getTransport("smtp");
